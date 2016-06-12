@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+function employee(firstName,lastName){
+
+	this.firstName = firstName;
+	this.lastName = lastName;
+
+	this.getFullName = function(){
+		return this.firstName + " " + this.lastName;
+	}
+}
+
+var emp = new employee("Shailendra","Lohia");
+
+document.write("firstName: " + emp.firstName + "</br>");
+document.write("firstName: " + emp.lastName + "</br>");
+document.write("firstName: " + emp.getFullName() + "</br>");
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="scripts/HelloHTTPExample.js"></script>
+    <link href="styles/HTTPStyle.css" rel="stylesheet" />
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Zipcode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.username}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.address.zipcode}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

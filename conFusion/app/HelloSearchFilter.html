@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="scripts/searchFilterScript.js"></script>
+    <link href="styles/styleSearchFilter.css" rel="stylesheet" />
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+   		<!-- Search : <input type="text" placeholder="Search Employees" ng-model="searchText" /> -->
+   		Search Name : <input type="text" placeholder="Search name" ng-model="searchText.Name" />
+   		Search City : <input type="text" placeholder="Search city" ng-model="searchText.City" />
+   		<!-- Search Gender and Salary : <input type="text" placeholder="Search Gender & City" ng-model=searchText> -->
+   		<input type="checkbox" ng-model="exactMatch" /> Exact Match
+   		<input type="checkbox" ng-model="hideGender" /> Hide Gender
+   		</br></br>
+   		<table>
+   			<thead>
+   				<tr>
+   					<th>Name</th>
+   					<th ng-hide="hideGender">Gender</th>
+   					<th>Salary</th>
+   					<th>City</th>
+   				</tr>
+   			</thead>
+   			<tbody>
+   				<tr ng-repeat="employee in employees | filter:searchText:exactMatch">
+   					<td>{{employee.Name | uppercase}}</td>
+   					<td ng-hide="hideGender">{{employee.Gender |lowercase}}</td>
+   					<td>{{employee.Salary | currency }}</td>
+   					<td>{{employee.City}}</td>
+   				</tr>
+   			</tbody>
+   		</table>
+    </div>
+</body>
+</html>

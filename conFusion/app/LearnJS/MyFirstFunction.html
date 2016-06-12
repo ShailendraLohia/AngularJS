@@ -1,0 +1,18 @@
+<script type="text/javascript">
+
+function countAlphabets(name){
+
+	var array = [];
+
+	for(let i=0;i<name.length;i++){
+		if((array.indexOf(name[i])) == -1){
+			array.push(name[i]);
+		}
+	}
+
+	return array;
+}
+
+
+document.write("Sum of given num is: " + countAlphabets("shailendra"));
+</script>
